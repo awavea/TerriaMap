@@ -1,0 +1,460 @@
+{
+  "corsDomains": [
+    "aremi.d61.io",
+    "aremi.data61.io",
+    "datacube.org.au",
+    "dea.ga.gov.au",
+    "gsky.nci.org.au",
+    "programs.communications.gov.au",
+    "spatial.industry.nsw.gov.au",
+    "lsa.geohub.sa.gov.au"
+  ],
+  "homeCamera": {
+    "west": 112,
+    "south": -48,
+    "east": 155,
+    "north": -5
+  },
+  "services": [],
+  "catalog": [
+    {
+      "name": "Electricity Infrastructure",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "name": "Generation",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Australian_Energy_Market_Operator/Live_NEM_Power_Generation %>,
+            <% include custodian/Australian_Photovoltaic_Institute/Live_Solar_PV %>,
+            <% include custodian/Clean_Energy_Regulator/Small_Scale_Installations %>,
+            <% include custodian/Clean_Energy_Regulator/Designated_Generation_Facilities %>,
+            <% include custodian/Clean_Energy_Regulator/Emissions_Baseline_Determinations %>,
+            <% include custodian/Geoscience_Australia/Power_Stations %>,
+            <% include custodian/RenewablesSA/Diesel_generators %>,
+          ]
+        },
+        {
+          "name": "Transmission",
+          "type": "group",
+          "items": [
+            {
+              "name": "Western Australia",
+              "type": "group",
+              "items": [
+                {
+                  "name": "Forecast Remaining Capacity",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Landgate/ForecastRemainingCapacity %>,
+                  ]
+                },
+                <% include custodian/Landgate/Electricity %>,
+              ]
+            },
+            <% include custodian/Geoscience_Australia/Transmission_Lines %>,
+            <% include custodian/Geoscience_Australia/Transmission_Substations %>,
+          ]
+        },
+        {
+          "name": "Network Opportunities",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/constraints/ejs/constraints %>,
+            {
+              "name": "New Generator Connection Capacity",
+              "type": "group",
+              "preserveOrder": true,
+              "items": [
+                {
+                  "name": "Transmission",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/Transmission-powerlines-geojson %>,
+                    <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/Transmission-substations-csv %>,
+                  ]
+                },
+                {
+                  "name": "Distribution",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/Distribution-powerlines-geojson %>,
+                    <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/Distribution-substations-csv %>,
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Supporting Information",
+              "type": "group",
+              "preserveOrder": true,
+              "items": [
+                <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/Distribution-boundaries %>,
+                <% include custodian/Institute_for_Sustainable_Futures/DANCE3/aremi-isf/DG-connection/transmission-lines %>,
+              ]
+            },
+            {
+              "name": "2016 Constraint Maps",
+              "type": "group",
+              "preserveOrder": true,
+              "items": [
+                <% include custodian/Institute_for_Sustainable_Futures/DANCE2/DANCE2 %>,
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Residential",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Australian_Bureau_of_Statistics/Consumption %>,
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Renewable Energy",
+      "type": "group",
+      "preserveOrder": true,
+      "items": [
+        {
+          "name": "Solar",
+          "type": "group",
+          "items": [
+            <% include custodian/Bureau_of_Meteorology/Solar_Climatology %>,
+            <% include custodian/Bureau_of_Meteorology/Solar_Satellite %>,
+            <% var sshoId = "5638a250" %>
+            <% include custodian/Bureau_of_Meteorology/Solar_Station_Observations %>,
+            <% var ssTmyId = "e7b24a0c" %>
+            <% include custodian/Data61/Solar_Station_Typical_Meteorological_Year %>
+          ]
+        },
+        {
+          "name": "Wind",
+          "type": "group",
+          "items": [
+            <% include custodian/ACT_Environment_and_Planning_Directorate/Windmap %>,
+            <% include custodian/DNVGL/WAsP-LIB-files %>,
+            <% include custodian/DNVGL/Wind %>,
+            <% include custodian/Geological_Survey_of_NSW/Wind %>,
+          ]
+        },
+        {
+          "name": "Bioenergy",
+          "type": "group",
+          "preserveOrder": true,
+          "description": "<p>Biomass data on the AREMI is developed and maintained through the Australian Biomass for Bioenergy Assessment, funded by the Australian Renewable Energy Agency. The project timeframe is 2015-2020, with further development and maintenance continuing beyond this timeframe through the partner organisations (custodians of the data), listed below.</p> <p>The purpose of the Australian Biomass and Bioenergy Assessment is to catalyse investment in the renewable energy sector through the provision of detailed information about biomass resources across Australia, to assist in project development and decision making for new bioenergy projects, and provide linkages between biomass supply, thorough the supply chain, to the end user.</p> <p>The bioenergy data may be integrated with other layers on the AREMI, such as electricity infrastructure, to aid in decision making. Analytical capabilities are also under development with Queensland University of Technology, and University of the Sunshine Coast.</p> <p>The partner organisations and contact details are:</p> <p><strong>Rural Industries Research and Development Corporation</strong> </p> <p>Julie Bird, Project Manager<br /> ph. 0407 455 580<br /> Email: <a href='mailto:julie.bird8@bigpond.com'><strong>julie.bird8@bigpond.com</strong></a><br /> </p> <strong>Department of Agriculture and Food, Western Australia</strong> <p>Kim Brooksbank<br /> Email: <a href='mailto:kim.brooksbank@agric.wa.gov.au'><strong>kim.brooksbank@agric.wa.gov.au</strong></a><br /> <br /> <strong>Sustainability Victoria </strong></p> <p>Kelly Wickham<br /> Email: <a href='mailto:Kelly.Wickham@sustainability.vic.gov.au'><strong>Kelly.Wickham@sustainability.vic.gov.au</strong></a></p> <p><strong>Department of State Growth</strong></p> <p>David Hurburgh<br /> Email: <a href='mailto:David.Hurburgh@stategrowth.tas.gov.au'><strong>David.Hurburgh@stategrowth.tas.gov.au</strong></a></p> <p><strong>Department of Industry - Lands; Forest Science - Land and Natural Resources</strong></p> <p>Fabiano Ximenes<br /> Email: <a href='mailto:fabiano.ximenes@dpi.nsw.gov.au'>fabiano.ximenes@dpi.nsw.gov.au</a></p> <p><strong>RenewablesSA, Department of State Development</strong> </p> <p>Joshua Carmichael<br /> Email: <a href='mailto:joshua.carmichael@sa.gov.au'><strong>joshua.carmichael@sa.gov.au</strong></a><br /> <br /> <strong>Queensland Department of Science, Information Technology and Innovation </strong></p> <p>Phil Norman<br /> Email: <a href='mailto:phil.norman@dsiti.qld.gov.au'><strong>phil.norman@dsiti.qld.gov.au</strong></a></p> <p><strong>Analytics team (QUT, USC)</strong></p> <p>Phil Hobson<br/> Email: <a href='mailto:P.hobson@qut.edu.au'>P.hobson@qut.edu.au</a><br/></p> <p>Mohammad Reza Ghaffariyan<br/> Email: <a href='mailto:mghaffar@usc.edu.au'>mghaffar@usc.edu.au</a></p>",
+          "items": [
+            {
+              "name": "National",
+              "type": "group",
+              "items": [
+                <% include custodian/ABARES/DGA_Catchment_Scale_Land_Use %>,
+                <% include custodian/USQ_National_Centre_for_Engineering_in_Agriculture/Biogas_Facilities %>,
+                <% include custodian/RIRDC/Biomass %>,
+                <% include custodian/Geoscience_Australia/Waste_Management_Facilities %>,
+                <% include custodian/QLD_Department_of_Science_Information_Technology_and_Innovation/Sugarcane %>,
+                <% include custodian/RenewablesSA/National_Winery_Residues %>,
+                <% include custodian/RenewablesSA/National_Piggery_Residues %>,
+              ]
+            },
+            {
+              "name": "New South Wales",
+              "type": "group",
+              "items": [
+                {
+                  "name": "Cropping",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/NSW_Department_of_Primary_Industries/Cropping %>,
+                  ]
+                },
+                {
+                  "name": "Forestry",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/NSW_Department_of_Primary_Industries/Forestry %>,
+                  ]
+                },
+                {
+                  "name": "Livestock",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/NSW_Department_of_Primary_Industries/Livestock %>,
+                  ]
+                },
+                {
+                  "name": "Waste",
+                  "type": "group",
+                  "preserveOrder": true,
+                  "items": [
+                    <% include custodian/NSW_Department_of_Primary_Industries/Waste %>,
+                  ]
+                }
+              ]
+            },
+            <% include custodian/QLD_Department_of_Science_Information_Technology_and_Innovation/Bio %>,
+            {
+              "name": "South Australia",
+              "type": "group",
+              "preserveOrder": true,
+              "items": [
+                <% include custodian/RenewablesSA/Bio %>,
+              ]
+            },
+            <% include custodian/TAS_Department_of_State_Growth/Bio %>,
+            {
+              "name": "Victoria",
+              "type": "group",
+              "items":  <% include custodian/Sustainability_Victoria/Root-new %>,
+            },
+            {
+              "name": "Western Australia",
+              "type": "group",
+              "items": [
+                <% include custodian/WA_Department_of_Primary_Industries_and_Regional_Development/Bio %>,
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Geothermal",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Geoscience_Australia/Geothermal_layers %>,
+            {
+              "name": "New South Wales",
+              "type": "group",
+              "items": [
+                <% include custodian/Geological_Survey_of_NSW/Geothermal %>,
+              ]
+            },
+          ]
+        },
+        {
+          "name": "Hydro",
+          "type": "group",
+          "items": [
+            {
+              "name": "Storage",
+              "type": "group",
+              "isPromoted": true,
+              "items": [
+                <% include custodian/ANU/ANU_STORES %>,
+              ]
+            },
+            <% var catchmentId = "54a55472" %>
+            <% include custodian/Bureau_of_Meteorology/Catchment %>,
+            <% include custodian/Geoscience_Australia/Hydrography %>,
+            <% var damWallsId = "54a558b4" %>
+            <% include custodian/Geoscience_Australia/National_Major_Dam_Walls %>,
+          ]
+        },
+        {
+          "name": "Wave",
+          "type": "group",
+          "items": [
+            {
+              "name": "Australian Wave Energy Atlas",
+              "type": "group",
+              "description": "<% include custodian/CSIRO_OandA/WaveAtlas-description.html %>",
+              "items": [
+                <% include custodian/CSIRO_OandA/WaveAtlas %>,
+              ]
+            },
+            <% include custodian/Geoscience_Australia/Bathymetry_Seabed %>,
+          ]
+        },
+        <% include custodian/Australian_Renewable_Energy_Agency/Project_Locations %>,
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "type": "group",
+      "items": [
+        <% include custodian/Geoscience_Australia/Infrastructure_layers %>,
+        <% include custodian/Geoscience_Australia/Major_Ports %>,
+        <% include custodian/Geoscience_Australia/Pipelines %>,
+        <% var damWallsId = "54a558c8" %>
+        <% include custodian/Geoscience_Australia/National_Major_Dam_Walls %>,
+        <% include custodian/Geoscience_Australia/National_Major_Desalination_Plants %>,
+        <% include custodian/Geoscience_Australia/Liquid_Fuel_Facilities %>,
+        {
+          "name": "Communications",
+          "type": "group",
+          "items": [
+            <% include custodian/Department_of_Communications/Broadband %>,
+            <% include custodian/Australian_Communications_and_Media_Authority/Radio_Licenses %>
+          ]
+        },
+        {
+          "name": "Transport",
+          "type": "group",
+          "items": [
+            <% include custodian/Geoscience_Australia/Transport_layers %>,
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Environment",
+      "type": "group",
+      "items": [
+        <% include custodian/Department_of_Environment/Web_Services %>,
+      ]
+    },
+    {
+      "name": "Boundaries",
+      "type": "group",
+      "items": [
+        <% include custodian/Australian_Bureau_of_Statistics/All_ABS_Boundaries %>,
+        {
+          "name": "Cadastre and Land Tenure",
+          "type": "group",
+          "preserveOrder": true,
+          "items": [
+            <% include custodian/Geoscience_Australia/Cadastral_Parcels %>,
+            <% include custodian/Geoscience_Australia/Land_Tenure %>,
+            {
+              "name": "By State",
+              "type": "group",
+              "items": [
+                <% include custodian/Landgate/Cadastre %>,
+                <% include custodian/Land_and_Property_Information_NSW/Cadastre %>,
+                <% include custodian/Land_Information_System_Tasmania/Cadastral_Parcels %>,
+                {
+                  "name": "Queensland",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Queensland_Government/Cadastre_Land_Tenure %>
+                  ]
+                },
+                {
+                  "name": "ACT",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/ACT_Environment_and_Planning_Directorate/cadastre %>
+                  ]
+                },
+                {
+                  "name": "Northern Territory",
+                  "type": "group",
+                  "items": [
+                    <% include custodian/Northern_Territory_Government/cadastre %>
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        <% include custodian/Geoscience_Australia/Defence_Restricted_Areas %>,
+        <% include custodian/Australian_Bureau_of_Statistics/Boundaries %>,
+        <% include custodian/Department_of_Environment/Protected_Areas %>,
+        <% include custodian/Department_of_Environment/Commonwealth_Marine_Regions %>,
+        <% include custodian/National_Native_Title_Tribunal/Native_Titles %>,
+      ]
+    },
+    {
+      "name": "Topography",
+      "type": "group",
+      "items": [
+        {
+          "name": "Elevation",
+          "type": "group",
+          "items": [
+            <% include custodian/Geoscience_Australia/Elevation_layers %>,
+          ]
+        },
+        {
+          "name": "Aerial/Satellite Imagery",
+          "type": "group",
+          "items": [
+            <% include custodian/Geoscience_Australia/ACT_Aerial_Imagery %>,
+            <% include custodian/Land_and_Property_Information_NSW/Aerial %>,
+            <% include custodian/Queensland_Government/Public_Imagery %>,
+            <% include custodian/Land_Information_System_Tasmania/Orthophoto %>,
+            <% include custodian/Digital_Earth_Australia/Landsat %>,
+            <% include custodian/Digital_Earth_Australia/Sentinel2 %>,
+            <% include custodian/Digital_Earth_Australia/Geomedian %>,
+          ]
+        },
+        {
+          "name": "Land",
+          "type": "group",
+          "items": [
+            <% include custodian/Geoscience_Australia/Land_layers %>,
+          ]
+        },
+        {
+          "name": "Water",
+          "type": "group",
+          "items": [
+            <% include custodian/Digital_Earth_Australia/Water_Observations_from_Space %>,
+            <% include custodian/Geoscience_Australia/Water_layers %>,
+            <% include custodian/Bureau_of_Meteorology/Water_layers %>,
+            <% var catchmentId = "d3a111dc" %>
+            <% include custodian/Bureau_of_Meteorology/Catchment %>,
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Population",
+      "type": "group",
+      "items": [
+        <% include custodian/Geoscience_Australia/Buildings %>,
+        <% include custodian/Geoscience_Australia/Population_Density %>,
+        <% include custodian/Australian_Bureau_of_Statistics/Census %>,
+      ]
+    },
+    {
+      "name": "Research",
+      "type": "group",
+      "items": [
+        {
+          "name": "ISF Breaking the Solar Gridlock",
+          "type": "group",
+          "items": [
+            {
+              "name": "Series 2 - CSP Indicative Firm Capacity",
+              "type": "group",
+              "items": [
+                <% include custodian/Institute_for_Sustainable_Futures/Series2 %>,
+              ]
+            },
+            {
+              "name": "Series 3 - CSP Cost Benefit",
+              "type": "group",
+              "items": [
+                <% include custodian/Institute_for_Sustainable_Futures/Series3 %>,
+              ]
+            }
+          ]
+        },
+        {
+          <% include custodian/NEAR_Program/near_catalogue %>
+        }
+      ]
+    },
+    {
+      "name": "Weather",
+      "type": "group",
+      "items": [
+        <% var sshoId = "54a554d6" %>
+        <% include custodian/Bureau_of_Meteorology/Solar_Station_Observations %>,
+        <% var ssTmyId = "17198a4e" %>
+        <% include custodian/Data61/Solar_Station_Typical_Meteorological_Year %>
+      ]
+    }
+  ]
+}

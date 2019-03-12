@@ -1,7 +1,7 @@
 {
     /* Names of init files (in wwwroot/init), without the .json extension, to load by default */
     initializationUrls: [
-        "terria"
+        "aremi"
     ],
     parameters: {
         googleUrlShortenerKey: null,
@@ -15,7 +15,7 @@
         /*
         // Text that will be added to any pages printed from your site.
         printDisclaimer:{
-            text:"Put your print disclaimer here.",
+            text:"CSIRO AWAVEA Test site.",
             url: "#"
         },
         */
@@ -35,11 +35,11 @@
         
         /*
         developerAttribution: {
-            text: "Your organisation",
-            link: "http://www.example.com"
+            text: "CSIRO O&A",
+            link: "http://www.csiro.au"
         },*/
         // This is used in various text messages. You should also set <title> in index.html
-        appName: "Terria Map",
+        appName: "AWAVEA Test Site",
 
         // See comments in lib/Views/global.scss for further information about customising colors, logos, fonts etc.
         brandBarElements: [
@@ -48,7 +48,7 @@
             ""
         ],
         // Shown when things go wrong.
-        supportEmail: "help@example.com",
+        supportEmail: "Simon.Pigot@csiro.au",
         // You probably shouldn't change this.
         proj4ServiceBaseUrl: "proj4def/",
         // Or this
