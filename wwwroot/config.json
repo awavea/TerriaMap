@@ -59,7 +59,8 @@
         mobileDefaultViewerMode: "2d",
         // Enable experimental features, since its nice to have the bleeding edge.
         // Disable it if things go wrong with the experimental features or your users aren't robust to features which might change or disapear completly.
-        "experimentalFeatures": true
+        "experimentalFeatures": true,
+        "defaultTo2D": true
     }
 }
 
