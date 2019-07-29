@@ -62,6 +62,8 @@
         "experimentalFeatures": true,
         "persistViewerMode": false,
         "defaultTo2D": true
+        // To override TerriaJS's region mapping file with a local one.
+        // regionMappingDefinitionsUrl: "data/regionMapping.json"
     }
 }
 
